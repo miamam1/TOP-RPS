@@ -33,51 +33,77 @@ function whoWon(playerScore, computerScore) {
     }
 
 }
-
-function RPSround(playerSelection, computerSelection) {
+function RPSround(playerSelection) {
+    computerSelection = getComputerChoice()
     playerSelection = playerSelection.toLowerCase()
     console.log("Player throws: " + playerSelection)
     console.log("Computer throws: " + computerSelection)
     if(playerSelection === 'rock' && computerSelection === 'scissors' || playerSelection === 'paper' && computerSelection === 'rock' ||
      playerSelection === 'scissors' && computerSelection === 'paper') {
         playerScore += 1
-        rounds += 1
-        return("You win, " + playerSelection + ' beats ' + computerSelection)
+        
+        playerScoreText.textContent = "Player score: " + playerScore 
+        return result.textContent = "You win this round as, " + playerSelection + ' beats ' + computerSelection, game()
         
     }
     else if(playerSelection === computerSelection) {
-        return("Tie")
+        return result.textContent = "Tie"
     }
     else {
         computerScore += 1
         rounds += 1
-        return("You lose, " + computerSelection + ' beats ' + playerSelection)
+        computerScoreText.textContent = "Computer score: " + computerScore
+        return result.textContent = "You lose this round as , " + computerSelection + ' beats ' + playerSelection , game()
         
         
     }
 }
 
 
+
+
+
+//function game() {
+    //while(rounds != 5) {
+    //userInput()
+    //let computerSelection = getComputerChoice()
+    //console.log(RPSround(playerSelection, computerSelection))
+    //}
+    //if(rounds == 5) {
+        //console.log("Games over, GGs")
+        //console.log("Your score: " + playerScore + "Computer Score: " + computerScore)
+        //console.log(whoWon(playerScore, computerScore))
+        
+        //playerScore = 0
+        //computerScore = 0
+        //rounds = 0
+    //}
+//}
 
 
 
 function game() {
-    while(rounds != 5) {
-    userInput()
-    let computerSelection = getComputerChoice()
-    console.log(RPSround(playerSelection, computerSelection))
-    }
-    if(rounds == 5) {
-        console.log("Games over, GGs")
-        console.log("Your score: " + playerScore + "Computer Score: " + computerScore)
-        console.log(whoWon(playerScore, computerScore))
-        
+    if(playerScore == 5) {
+        result.textContent = "You won! Good job."
         playerScore = 0
         computerScore = 0
-        rounds = 0
+        playerScoreText.textContent = "Player Score: " + playerScore
+        computerScoreText.textContent = "Computer Score: " + computerScore
+    }
+    else if(computerScore == 5) {
+        result.textContent = "You lost!"
+        playerScore = 0 
+        computerScore = 0
+        playerScoreText.textContent = "Player Score: " + playerScore
+        computerScoreText.textContent = "Computer Score: " + computerScore
     }
 }
 
+const rock = document.querySelector('#rock')
+rock.addEventListener('click', () => RPSround('rock'))
 
+const paper = document.querySelector('#paper')
+paper.addEventListener('click', () => RPSround('paper'))
 
-game()
+const scissors = document.querySelector('#scissors')
+scissors.addEventListener('click', () => RPSround('scissors'))
