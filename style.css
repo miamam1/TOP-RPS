@@ -1,0 +1,98 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+
+.buttonsContainer {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* .computerContainer {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    
+} */
+
+
+
+
+/* https://pixabay.com/vectors/rock-paper-scissors-scissors-hand-296853/ */
+/* https://pixabay.com/vectors/rock-paper-scissors-paper-hand-296855/ */
+/* https://pixabay.com/vectors/rock-paper-scissors-rock-hand-296854/ */
+
+
+.button {
+    width: 300px;
+    height: 300px;
+    cursor: pointer;
+    flex-wrap: wrap;
+    
+    
+    
+    
+}
+
+.rockCSS {
+    background-image: url(images/rock-paper-scissors-296854.svg);
+    
+}
+
+.paperCSS {
+    background-image: url(images/rock-paper-scissors-296855.svg);
+}
+
+.scissorsCSS {
+    background-image: url(images/rock-paper-scissors-296853.svg);
+}
+
+.rockCSS:hover {
+    background-image: url(images/rock-paper-scissors-296854.svg), linear-gradient(rgba(252, 0, 0, 0.5),rgba(236, 8, 8, 0.5));
+    background-blend-mode: overlay;
+}
+
+.paperCSS:hover {
+    background-image: url(images/rock-paper-scissors-296855.svg), linear-gradient(rgba(252, 0, 0, 0.5),rgba(236, 8, 8, 0.5));
+    background-blend-mode: overlay;
+}
+
+.scissorsCSS:hover {
+    background-image: url(images/rock-paper-scissors-296853.svg), linear-gradient(rgba(252, 0, 0, 0.5),rgba(236, 8, 8, 0.5));
+    background-blend-mode: overlay;
+
+}
+
+
+
+
+
+/* .computerRock {
+    background-image: url(images/rock-paper-scissors-296854.svg);
+    background-blend-mode: overlay;
+    cursor: default;
+}
+
+.computerPaper {
+    background-image: url(images/rock-paper-scissors-296855.svg);
+    background-blend-mode: overlay;
+    cursor: default;
+}
+
+.computerScissors {
+    background-image: url(images/rock-paper-scissors-296853.svg);
+    background-blend-mode: overlay;
+    cursor: default;
+
+
+} 
+in the future may add computer choice representation. */
+
+

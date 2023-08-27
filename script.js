@@ -41,22 +41,22 @@ function RPSround(playerSelection) {
     if(playerSelection === 'rock' && computerSelection === 'scissors' || playerSelection === 'paper' && computerSelection === 'rock' ||
      playerSelection === 'scissors' && computerSelection === 'paper') {
         playerScore += 1
-        
         playerScoreText.textContent = "Player score: " + playerScore 
-        return result.textContent = "You win this round as, " + playerSelection + ' beats ' + computerSelection, game()
+        return result.textContent = "You win this round as your choice, " + playerSelection + "," + ' beats ' + computerSelection + "." , game()
         
     }
     else if(playerSelection === computerSelection) {
-        return result.textContent = "Tie"
+        return result.textContent = "It's a tie!"
     }
     else {
         computerScore += 1
         rounds += 1
         computerScoreText.textContent = "Computer score: " + computerScore
-        return result.textContent = "You lose this round as , " + computerSelection + ' beats ' + playerSelection , game()
+        return result.textContent = "You lose this round as the computers choice," + computerSelection + "," + ' beats ' + playerSelection + ".", game()
         
         
     }
+    
 }
 
 
@@ -84,14 +84,14 @@ function RPSround(playerSelection) {
 
 function game() {
     if(playerScore == 5) {
-        result.textContent = "You won! Good job."
+        result.textContent = "You won! Good job. To play agian, pick another option."
         playerScore = 0
         computerScore = 0
         playerScoreText.textContent = "Player Score: " + playerScore
         computerScoreText.textContent = "Computer Score: " + computerScore
     }
     else if(computerScore == 5) {
-        result.textContent = "You lost!"
+        result.textContent = "You lost! To play agian, pick another option."
         playerScore = 0 
         computerScore = 0
         playerScoreText.textContent = "Player Score: " + playerScore
